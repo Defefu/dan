@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+         :root {
+            --text-color: #1a1c20;
+            --link-color: #4a76ee;
+            --background-color: #eeeff1;
+        }
+        
+        * {
+            margin: 0;
+            padding: o;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: var(--background-color);
+            max-width: 1400px;
+            margin: 0 auto;
+            background: cyan;
+        }
+        
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            height: 80px;
+        }
+        
+        nav .left a {
+            color: var(--text-color);
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        nav .left a {
+            color: var(--text-color);
+            margin: 0 10px;
+        }
+        
+        nav .right a :last-child {
+            color: var(--background-color);
+            background-color: var(--text-color);
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+        
+        nav .right a span {
+            margin-left: 5px;
+        }
+        /* section1: hero*/
+        
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            margin: 50px 0;
+            margin-top: 100px;
+        }
+        
+        .hero-section .text {
+            flex: 5;
+        }
+        
+        .hero-section .text h2 {
+            font-size: 45px;
+            color: blue;
+        }
+        
+        .hero-section .text .link {
+            margin-top: 25px;
+        }
+        
+        .hero-section .text .link a {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid var(--link-color);
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: 1s;
+        }
+        
+        .hero-section .text .link a:hover {
+            color: var(--text-color);
+            border: 2px solid var(--text-color);
+        }
+        
+        .hero-section .headshot {
+            flex: 2;
+        }
+        
+        .hero-section .headshot img {
+            width: 400px;
+            border-radius: 50%;
+        }
+        /* section2: skill */
+        
+        .skill-section {
+            padding: 0 50px;
+            margin-bottom: 100px;
+        }
+        
+        .skill-section h2 {
+            text-align: center;
+            font-size: 35px;
+            color: blue;
+        }
+        
+        .skill-section .text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .skill-section .cells {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .skill-section .cells .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 1.5px solid #d3d3d3;
+            border-radius: 5px;
+        }
+        
+        .skill-section .cells .cell .img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            border-radius: 2px;
+        }
+        
+        .skill-section .cells .cell span {
+            font-size: 18px;
+        }
+        /* section3: testimony */
+        
+        .testimony-section {
+            padding: 0 50px;
+            margin-bottom: 100px;
+        }
+        
+        .testimony-section h2 {
+            font-size: 35px;
+            margin-bottom: 30px;
+            color: blue;
+        }
+        
+        .testimony-section .group {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .testimony-section .group .person-details {
+            text-align: center;
+            flex: 2;
+        }
+        
+        .testimony-section .group .person-details img {
+            width: 300px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        
+        .testimony-section .group .person-details p {
+            font-weight: 800;
+        }
+        
+        .testimony-section .group .person-details p:last-child {
+            font-weight: normal;
+        }
+        
+        .testimony-section .group .text {
+            flex: 8;
+        }
+        /* section4: contact */
+        
+        .contact-section {
+            padding: 0 50px;
+            margin-bottom: 100px;
+        }
+        
+        .contact-section h2 {
+            font-size: 35px;
+            color: blue;
+        }
+        
+        .contact-section .group {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-section .group .text {
+            flex: 3;
+            margin-top: 20px;
+        }
+        
+        .contact-section .group form {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-section .group form input,
+        .contact-section .group form textarea {
+            font-family: 'poppins', sans-serif;
+            border: 2px solid var(--link-color);
+            background-color: transparent;
+            padding: 10px;
+            margin-bottom: 15px;
+            outline: none;
+            resize: none;
+        }
+        
+        .contact-section .group form button {
+            font-size: 16px;
+            font-family: 'poppins', sans-serif;
+            color: #fff;
+            background-color: var(--link-color);
+            border: none;
+            height: 50px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        
+        .contact-section .group form button {
+            filter: brightness(.9);
+        }
+        
+        @media(max-width: 850px) {
+            /* section1: hero */
+            .hero-section .text h2 {
+                font-size: 35px;
+            }
+        }
+        
+        @media(max-width: 740px) {
+            /* section1: hero */
+            .hero-section {
+                flex-direction: column-reverse;
+            }
+            .hero-section .headshot img {
+                width: 300px;
+            }
+            /* section3: testimony */
+            .testimony-section {
+                text-align: center;
+            }
+            .testimony-section .group {
+                flex-direction: column;
+            }
+            /* section4: contact */
+            .contact-section .group {
+                flex-direction: column;
+            }
+        }
+        
+        @media(max-width: 600px) {
+            nav {
+                padding: 0 20px;
+            }
+            nav .right a {
+                font-size: 22px;
+            }
+            nav .right a:last-child {
+                color: var(--text-color);
+                background-color: transparent;
+                padding: 0;
+            }
+            nav .right a span {
+                display: visible;
+            }
+            /* section1: hero */
+            .hero-section {
+                padding: 0 20px;
+            }
+            .hero-section .text h2 {
+                font-size: 30px;
+            }
+            /* section2: skill */
+            .skill-section {
+                padding: 0 20px;
+            }
+            .skill-section .cells .cell span {
+                font-size: 16px;
+            }
+            /* section3: testimony */
+            .testimony-section {
+                padding: 0 20px;
+            }
+            /* section4: contact */
+            .contact-section {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav>
+        <div class="left">
+            <a href="/">Degefu Dawit</a>
+        </div>
+        <div class="right">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Linkedin</span>
+            </a>
+            <a href="mailto:degefudawit.com ">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
+    </nav>
+    <main>
+        <!--section1: hero-->
+        <section class="hero-section">
+            <div class="text">
+                <h2>Hi, I'm Degefu</h2>
+                <p>lorem ipsum dolor sit amet consectetur adipsising elit. rem ipsum assumumenda est.
+                </p>
+                <div class="link">
+                    <a href="#skill">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Skill</span>
+                    </a>
+                    <a href="#testimony">
+                        <i class="fa-solid fa-pen"></i>
+                        <span>Testimony</span>
+                    </a>
+                    <a href="#contact">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            <div class="headshot">
+                <img src="c:\Users\Adimin\OneDrive\Pictures\image\degefu.jpg" alt="Degefu Dawit headshot">
+            </div>
+        </section>
+        <!--section2: skill-->
+        <section id="skill" class="skill-section">
+            <h2>Skill:-</h2>
+            <div class="text">
+                web developre skill maretial or things list following: 1.html 2.css 3. JAVASCRIPT 4.NODE 5.REACT
+            </div>
+            <div class="cells">
+                <div class="cell">
+                    <img src="" alt="html logo">
+                    <span>HTML</span>
+                </div>
+                <div class="cell">
+                    <img src="" alt="css logo">
+                    <span>css</span>
+                </div>
+                <div class="cell">
+                    <img src="" alt="javascript logo">
+                    <span>javascript</span>
+                </div>
+                <div class="cell">
+                    <img src="" alt="node logo">
+                    <span>Node</span>
+                </div>
+                <div class="cell">
+                    <img src="" alt="react logo">
+                    <span>React</span>
+                </div>
+            </div>
+        </section>
+
+        <!--section3: testimony-->
+        <section id="testimony" class="testimony-section">
+            <h2>Testimony:-</h2>
+            <div class="group">
+                <div class="person-details">
+                    <img src="c:\Users\Adimin\OneDrive\Pictures\image\test..jpg">
+                    <p>Degefu Dawit</p>
+                    <p>Web Developer Programmers</p>
+                </div>
+
+                <div class="text">
+                    "i am web developerv for ant thing depending on materials list gollowing html, css, javascript, node.js and reacts."
+                </div>
+
+            </div>
+            </div>
+        </section>
+        <!--section3: contact-->
+        <section id="contact" class="contact-section">
+            <h2>Contact:-</h2>
+            <div class="group">
+                <div class="text">"my name is Degefu Dawit: anyone do you have any question! please contact me! i clearify simple ways! don't forget"
+                </div>
+                <form action="">
+                    <label for="name">name:-</label>
+                    <input type="text" id="name">
+
+                    <label for="email">Email:-</label>
+                    <input type="email" id="email">
+
+                    <label for="message">Message:-</label>
+                    <textarea id="message" cols="30" rows="10"></textarea>
+                    <button type="submit">Send Message</button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
